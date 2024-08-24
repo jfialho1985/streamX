@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #0e0b16;
@@ -109,24 +110,28 @@ body {
 }
 
 .content-row {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .content-item {
     background-color: #28223f;
     padding: 20px;
     border-radius: 8px;
-    width: 200px;
-    height: 300px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content-item img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 .content-item:hover {
@@ -160,12 +165,12 @@ body {
     }
 
     .content-row {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .content-item {
-        width: 90%;
+        width: 100%;
         height: auto;
         margin-bottom: 20px;
     }
@@ -189,9 +194,13 @@ body {
         padding: 8px 15px;
     }
 
+    .content-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .content-item {
-        width: 95%;
-        padding: 15px;
+        width: 100%;
+        padding: 10px;
     }
 }
 
