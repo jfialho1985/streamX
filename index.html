@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Streaming App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a2e; /* Fondo violeta oscuro */
+            color: #ffffff; /* Color del texto */
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            overflow-x: hidden; /* Previene el desplazamiento horizontal */
+        }
+
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Asegura que las figuras estén detrás del contenido */
+            pointer-events: none; /* Permite hacer clic a través de las figuras */
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1); /* Color blanco con opacidad */
+            border-radius: 50%;
+            animation: float 10s infinite;
+        }
+
+        .shape1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 8s;
+        }
+
+        .shape2 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 60%;
+            animation-duration: 12s;
+        }
+
+        .shape3 {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            left: 20%;
+            animation-duration: 10s;
+        }
+
+        .shape4 {
+            width: 250px;
+            height: 250px;
+            top: 30%;
+            left: 80%;
+            animation-duration: 15s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes logo-animate {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+                transform: scale(1.1);
+            }
+            100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+                transform: scale(1);
+            }
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffffff;
+            animation: logo-animate 5s infinite; /* Animación prolongada y futurista para el logo */
+        }
+
+        .content-item {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .content-item img {
+            width: 200px; /* Ajusta este valor al tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .content-item img:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .content-item p {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .hero-content h1 {
+            background: none; /* Elimina cualquier fondo */
+            color: #fff; /* Color blanco para el texto */
+            font-size: 3em; /* Tamaño de fuente ajustable */
+            margin: 0;
+        }
+
+        .hero-content {
+            text-align: center; /* Centra el contenido */
+            padding: 2em; /* Añade un poco de espacio alrededor del contenido */
+        }
+
+        .cast-button {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            color: #1a1a2e;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cast-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+        }
+
+        .cast-button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+    </div>
+    <header class="header">
+        <div class="logo">StreamX</div>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="movies.html">Películas</a>
+            <a href="series.html">Series</a>
+            <a href="#">Mi Lista</a>
+        </nav>
+        <div class="auth-buttons">
+            <button id="login-button">Iniciar Sesión</button>
+            <a href="register.html"><button id="register-button">Registrarse</button></a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animated-text">Bienvenido al Futuro del Streaming</h1>
+                <p>Ve tus películas y series favoritas en un entorno futurista.</p>
+                <button class="cta-button">Empieza a Ver</button>
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>Películas Populares</h2>
+            <div class="content-row">
+                <div class="content-item">
+                    <a href="view_movie.html?movie=pelicula1">
+                        <img src="imagenes/pelicula1.jpg" alt="Película 1">
+                        <p>Película 1</p>
+                    </a>
+                </div>
+                <div class="content-item">
+                    <a href="view_movie.html?movie=pelicula2">
+                        <img src="imagenes/pelicula2.jpg" alt="Película 2">
+                        <p>Película 2</p>
+                    </a>
+                </div>
+                <div class="content-item">
+                    <a href="view_movie.html?movie=pelicula3">
+                        <img src="imagenes/pelicula3.jpg" alt="Película 3">
+                        <p>Película 3</p>
+                    </a>
+                </div>
+                <div class="content-item">
+                    <a href="view_movie.html?movie=pelicula4">
+                        <img src="imagenes/pelicula4.jpg" alt="Película 4">
+                        <p>Película 4</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>Series en Tendencia</h2>
+            <div class="content-row">
+                <div class="content-item">
+                    <a href="view_movie.html?series=serie1">
+                        <img src="imagenes/serie1.jpg" alt="Serie 1">
+                        <p>Serie 1</p>
+                    </a>
+                </div>
+                <div class="content-item">
+                    <a href="view_movie.html?series=serie2">
+                        <img src="imagenes/serie2.jpg" alt="Serie 2">
+                        <p>Serie 2</p>
+                    </a>
+                </div>
+                <div class="content-item">
+                    <a href="view_movie.html?series=serie3">
+                        <img src="imagenes/serie3.jpg" alt="Serie 3">
+                        <p>Serie 3</p>
+                    </a>
+                </div>
+                <div class="content-item">
+                    <a href="view_movie.html?series=serie4">
+                        <img src="imagenes/serie4.jpg" alt="Serie 4">
+                        <p>Serie 4</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="content-item">
+            <button class="cast-button" id="cast-button">
+                <img src="imagenes/chromecast_icon.svg" alt="Chromecast">Transmitir a Chromecast
+            </button>
+        </div>
+    </main>
+    <!-- Incluir el SDK de Google Cast -->
+    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const castContext = cast.framework.CastContext.getInstance();
+            castContext.setOptions({
+                receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+                autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+            });
+
+            const castButton = document.getElementById('cast-button');
+            castButton.addEventListener('click', function() {
+                cast.framework.CastContext.getInstance().requestSession().then(() => {
+                    const session = cast.framework.CastContext.getInstance().getCurrentSession();
+                    if (session) {
+                        const mediaInfo = new chrome.cast.media.MediaInfo('URL_DEL_VIDEO', 'video/mp4');
+                        const request = new chrome.cast.media.LoadRequest(mediaInfo);
+                        session.loadMedia(request).then(() => {
+                            console.log('Cargando media en el Chromecast');
+                        }).catch(error => {
+                            console.error('Error al cargar media en el Chromecast:', error);
+                        });
+                    }
+                }).catch(error => {
+                    console.error('Error al iniciar sesión de Chromecast:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
