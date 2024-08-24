@@ -54,7 +54,7 @@ body {
     height: 50vh;
     background: url('../img/hero-background.jpg') no-repeat center center/cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    background-color: transparent; /* Quitamos el fondo negro */
+    background-color: transparent;
 }
 
 .hero-content {
@@ -68,7 +68,7 @@ body {
     font-size: 3em;
     margin-bottom: 10px;
     animation: slide-in 2s ease-out forwards;
-    opacity: 0; /* Initial state for the fade-in effect */
+    opacity: 0;
 }
 
 @keyframes slide-in {
@@ -132,5 +132,66 @@ body {
 .content-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .content-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-item {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .content-item {
+        width: 95%;
+        padding: 15px;
+    }
 }
 
