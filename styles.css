@@ -165,7 +165,7 @@ body {
     }
 
     .content-row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
 
@@ -195,7 +195,7 @@ body {
     }
 
     .content-row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
     }
 
     .content-item {
